@@ -1,9 +1,11 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.Contest;
 import models.User;
 import models.Video;
 import play.db.jpa.Transactional;
+import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.index;
@@ -40,5 +42,13 @@ public class Application extends Controller {
         concurso1.save();
 */
         return ok(index.render("Your new application is readii."));
+    }
+
+    public  Result sayHello() {
+        ObjectNode result = Json.newObject();
+        result.put("exampleField1", "foobar");
+        result.put("exampleField2", "Hello world!");
+
+        return ok(result);
     }
 }

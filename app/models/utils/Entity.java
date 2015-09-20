@@ -15,6 +15,17 @@ public abstract class Entity {
 
     private int id = 0;
 
+    public static List findByColumn2(Class pClass,String columna, String filter) {
+        List list = null;
+        try {
+            return JPA.em().createQuery("FROM " + pClass.getName() + " WHERE " + columna+"='"+filter+"'").getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+
     public static List findAll(Class pClass) {
         List list = null;
         try {
@@ -35,10 +46,11 @@ public abstract class Entity {
         return list;
     }
 
+    @SuppressWarnings("JpaQlInspection")
     public static Object findById(Class pClass, Long id) {
         Object entity = null;
         try {
-            entity = JPA.em().createQuery("FROM " + pClass.getName().toString().substring(pClass.getName().toString().lastIndexOf(".") + 1, pClass.getName().toString().length()) + " WHERE id = " + id).getSingleResult();
+            entity = JPA.em().createQuery("FROM " + pClass.getName().toString().substring(pClass.getName().toString().lastIndexOf(".") + 1, pClass.getName().toString().length()) + " WHERE id= " + id).getSingleResult();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,7 +86,7 @@ public abstract class Entity {
 
     public void delete() {
         try {
-            JPA.em().remove(this);
+            JPA.em().remove(JPA.em().merge(this));
         } catch (Exception e) {
             e.printStackTrace();
         }

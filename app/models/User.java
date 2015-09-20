@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "User", catalog = "videoContest")
 public class User extends models.utils.Entity implements java.io.Serializable {

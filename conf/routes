@@ -2,8 +2,19 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
-GET        /                    controllers.Application.index()
+# User
+POST        /user                            controllers.UserController.crearUsuario()
+GET         /user/:correo/:clave             controllers.UserController.login(correo: String,clave: String)
+
+# Contest
+POST        /contest                         controllers.ContestController.crearConcurso()
+GET         /contest/:idUser                 controllers.ContestController.listaConcursos(idUser: String)
+GET         /contest/findbyid/:id            controllers.ContestController.getContest(id: Long)
+POST        /contest/eliminar                controllers.ContestController.eliminarConcurso()
+
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file        controllers.Assets.versioned(path="/public", file: Asset)
+GET         /assets/concursos        controllers.Assets.at(path="/public",file="VerConcurso.html")
+GET         /assets/*file                    controllers.Assets.versioned(path="/public", file: Asset)
+
+

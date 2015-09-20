@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="VideoContest" ng-controller="UserCtrl">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Video Contest</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -75,9 +76,10 @@
                     </li>
                     <li>
                         <br>
-                            <input type="text" placeholder="Usuario" style="border-radius: 3px;border:none;width: 30%">
-                            <input type="password" placeholder="Clave" style="border-radius: 3px;border:none;width: 30%">
-                            <button style="background-color: #fec503;color:white;border-radius: 3px;border:none">Entrar</button>
+                        <div id="sesion" >
+
+                        </div>
+
 
                     </li>
 
@@ -95,7 +97,7 @@
             <div class="intro-text">
                 <div class="intro-lead-in">¡Cree concursos de videos para su empresa!</div>
                 <div class="intro-heading">¡Es fácil y rápido!</div>
-                <a href="Registro.html" class="page-scroll btn btn-xl">¡Regístrate!</a>
+                <a id="btnRegistrar" href="Registro.html" class="page-scroll btn btn-xl">¡Regístrate!</a>
                 <a href="#services" class="page-scroll btn btn-xl">Saber más</a>
 
             </div>
@@ -638,7 +640,26 @@
             </div>
         </div>
     </div>
-
+    <div id="divMensaje"  style="display:none;border:1px solid grey;border-radius:5px; background-color:white; width:20%; position:absolute;top:35%;left:40%; z-index: 1">
+        <div align="center" style="background-color: #ffe211;width: 100%;">
+            <b><span style="color:white; font-size:20px;font-family: 'Open Sans Condensed', sans-serif; text-align:center;">Video Contest</span></b>
+        </div>
+        <table border="0">
+            <tr>
+                <td>
+                    <img align="left" src="img/inf.png">
+                </td>
+                <td align="center" style="padding-left:5px;padding-right:5px" valign="top">
+                    <p align="justify" id="txtMensaje"></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button id="btnMensaje" class="botonIngresar" style="width: 50%" ng-click="divMensaje('');" >Aceptar</button><br><br>
+                </td>
+            </tr>
+        </table>
+    </div>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -656,6 +677,11 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+    <script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+    <script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+    <script src="js/Angular/App.js"></script>
+    <script src="js/Angular/UserCtrl.js"></script>
+    <script src="js/Angular/login.js"></script>
 
 </body>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  ng-app="VideoContest" ng-controller="UserCtrl">
 
 <head>
 
@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Video Contest</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index" >
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #080808">
@@ -94,16 +94,18 @@
                     <h2 class="section-heading">Registro</h2>
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
-                    <form action="index.html">
+            <div class="row text-center" >
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3" >
+                    <form  ng-submit="registrar();">
 
-                    <input type="text" placeholder="Nombres" class="form-control" required><br>
-                    <input type="text" placeholder="Apellidos" class="form-control" required><br>
-                    <input type="email" placeholder="Correo" class="form-control" required><br>
-                    <input type="password" placeholder="Contraseña" class="form-control" required><br>
-                    <input type="password" placeholder="Confirmar contraseña"class="form-control"  required><br>
-                    <input type="submit" class="btn btn-default btn-block" style="background-color:#F2D862;color:white" id="submit" value="Registrarme">
+                    <input id="nombres" type="text" placeholder="Nombres" class="form-control" required><br>
+                    <input id="apellidos" type="text" placeholder="Apellidos" class="form-control" required><br>
+                    <input id="correo" type="email" placeholder="Correo" class="form-control" required><br>
+                    <input id="clave" type="password" placeholder="Contraseña" class="form-control" required><br>
+                    <input id="clave2" type="password" placeholder="Confirmar contraseña"class="form-control"  required><br>
+                        <div align="left"><label  id="error" style="color:red"></label></div>
+
+                    <input  type="submit" class="btn btn-default btn-block" style="background-color:#FED136;color:white" id="submit" value="Registrarme">
 
                     </form>
                 </div>
@@ -158,6 +160,10 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+    <script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+    <script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+    <script src="js/Angular/App.js"></script>
+    <script src="js/Angular/UserCtrl.js"></script>
 
 </body>
 
