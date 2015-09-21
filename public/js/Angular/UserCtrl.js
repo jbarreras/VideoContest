@@ -87,4 +87,6 @@
     };
     var module = angular.module("VideoContest");
     module.controller("UserCtrl", ctrl);
+
+
     }());
