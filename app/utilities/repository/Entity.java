@@ -1,4 +1,4 @@
-package models.utils;
+package utilities.repository;
 
 import play.db.jpa.JPA;
 
@@ -15,16 +15,15 @@ public abstract class Entity {
 
     private int id = 0;
 
-    public static List findByColumn2(Class pClass,String columna, String filter) {
+    public static List findByColumn2(Class pClass, String columna, String filter) {
         List list = null;
         try {
-            return JPA.em().createQuery("FROM " + pClass.getName() + " WHERE " + columna+"='"+filter+"'").getResultList();
+            return JPA.em().createQuery("FROM " + pClass.getName() + " WHERE " + columna + "='" + filter + "'").getResultList();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return list;
     }
-
 
     public static List findAll(Class pClass) {
         List list = null;

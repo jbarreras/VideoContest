@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "User", catalog = "videoContest")
-public class User extends models.utils.Entity implements java.io.Serializable {
+public class User extends utilities.repository.Entity implements java.io.Serializable {
 
     private String name = "";
     private String lastName = "";

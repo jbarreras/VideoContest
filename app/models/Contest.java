@@ -1,13 +1,14 @@
 package models;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "Contest", catalog = "videoContest")
-public class Contest extends models.utils.Entity implements java.io.Serializable {
+public class Contest extends utilities.repository.Entity implements java.io.Serializable {
 
     private String name = "";
     private String banner = "";

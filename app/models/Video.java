@@ -1,11 +1,12 @@
 package models;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 import java.util.Date;
 
 @Entity
 @Table(name = "Video", catalog = "videoContest")
-public class Video extends models.utils.Entity implements java.io.Serializable {
+public class Video extends utilities.repository.Entity implements java.io.Serializable {
 
     private String name = "";
     private String lastname = "";
@@ -15,7 +16,7 @@ public class Video extends models.utils.Entity implements java.io.Serializable {
     private Date uploadDate = new Date();
     private Date startDateConversion = new Date();
     private Date finishConversion = new Date();
-    private String state = "";
+    private VideoState state = VideoState.PENDING;
     private String email = "";
     private User user = new User();
     private Contest contest = new Contest();
@@ -92,12 +93,13 @@ public class Video extends models.utils.Entity implements java.io.Serializable {
         this.finishConversion = finishConversion;
     }
 
-    @Column(name = "state", length = 2)
-    public String getState() {
+    @Column(name = "state")
+    @Enumerated(EnumType.STRING)
+    public VideoState getState() {
         return this.state;
     }
 
-    public void setState(String state) {
+    public void setState(VideoState state) {
         this.state = state;
     }
 
