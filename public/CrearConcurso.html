@@ -27,144 +27,145 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
 
 <body id="page-top" class="index">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #080808">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Video Contest</a>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #080808">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">Video Contest</a>
 
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
-
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="index.html">Inicio</a>
-                    </li>
-                    <li>
-                        <br>
-                        <div id="sesion" >
-
-                        </div>
-
-                    </li>
-
-                </ul>
-
-            </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
-    </nav>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div >
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
 
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <br>
+                    <div id="sesion" >
+
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div >
+
+        </div>
+    </div>
+</header>
+
+<!-- Services Section -->
+<section id="registro">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Crear Concurso</h2>
             </div>
         </div>
-    </header>
-
-    <!-- Services Section -->
-    <section id="registro">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Crear Concurso</h2>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
-                    <form ng-submit="grabar();">
+        <div class="row text-center">
+            <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+                <form ng-submit="grabar();">
 
                     <input id="nombre" type="text" placeholder="Nombre" class="form-control" required><br>
-                    <input id="banner" type="text" placeholder="Banner" class="form-control" required><br>
+                    <input id="banner" type="url" placeholder="Banner" class="form-control" required><br>
                     <input id="url" type="text" placeholder="URL" class="form-control" required><br>
                     <input id="fechaInicio" type="date" placeholder="Fecha inicio concurso" class="form-control" required><br>
                     <input id="fechaFin" type="date" placeholder="Fecha fin concurso"class="form-control"  required><br>
-                        <textarea id="descripcion" class="form-control" rows="5" placeholder="Descripción concurso" required></textarea><br>
-                        <div align="left"><label  id="error" style="color:red"></label></div>
-                    <input type="submit" class="btn btn-default btn-block" style="background-color:#FED136;color:white" id="submit" value="Crear Concurso">
+                    <textarea id="descripcion" class="form-control" rows="5" placeholder="Descripción concurso" required></textarea><br>
+                    <div align="left"><label  id="error" style="color:red"></label></div>
+                    <input type="submit" class="btn btn-default btn-block" style="background-color:#FED136;color:white" id="submit" value="Grabar Concurso">
 
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2014</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; Your Website 2014</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline quicklinks">
+                    <li><a href="#">Privacy Policy</a>
+                    </li>
+                    <li><a href="#">Terms of Use</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/cbpAnimatedHeader.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <!--<script src="js/contact_me.js"></script>-->
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<!--<script src="js/contact_me.js"></script>-->
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
-    <script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
-    <script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
-    <script src="js/Angular/App.js"></script>
-    <script src="js/Angular/ContestCtrl.js"></script>
-    <script src="js/Angular/login.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="js/agency.js"></script>
+<script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+<script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+<script src="js/Angular/App.js"></script>
+<script src="js/Angular/ContestCtrl.js"></script>
+<script src="js/Angular/login.js"></script>
+<script data-require="ui-bootstrap@*" data-semver="0.12.1" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
 
 </body>
 

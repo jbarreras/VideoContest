@@ -27,186 +27,172 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
 
 <body id="page-top" class="index">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #080808">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Video Contest</a>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #080808">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">Video Contest</a>
 
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <br>
+                    <div id="sesion" >
+
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div >
+
+        </div>
+    </div>
+</header>
+
+<!-- Services Section -->
+
+<section id="registro">
+
+    <div class="container">
+        <div  class="row">
+            <h2 id="nombre" class="section-heading">CONCURSO DE VÍDEOS CORTOS #TUVERANO DE CINE</h2>
+            <div class="col-sm-12" style=" box-shadow: 2px 2px 5px gray; border-radius: 5px">
+                <p id="descripcion">
+                </p>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+        </div>
 
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
+
+        <br>
+
+        <h2 class="section-heading">Videos</h2>
+        <div class="row" style="box-shadow: 2px 2px 5px gray; border-radius: 5px" ng-repeat="item in filteredTodos " repeat-end="onEnd()">
+            <div  class="col-xs-8" >
+                <br>
+                <div id="{{item.id}}" >
+                </div>
+                <br>
+            </div>
+            <div class="col-xs-4" >
+                <br>
+                <span ><label>Fecha ceración: </label>{{" "+getFecha(item.uploadDate)}}</span><br>
+                <label>Usuario:</label><br>
+                <span>{{item.name+" "+item.lastname}}</span><br>
+                <span>{{item.email}}</span><br><br>
+                <span>{{item.description}}</span><br><br>
+                <span ><label>Estado: </label>{{item.state}}</span><br>
+            </div>
+        </div>
+        <div align="center">
+            <pagination
+                    ng-model="currentPage"
+                    total-items="allVideos.length"
+                    max-size="maxSize"
+                    boundary-links="true">
+            </pagination>
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; Your Website 2014</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="index.html">Inicio</a>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
                     </li>
-                    <li>
-                        <br>
-                        <div id="sesion" >
-
-                        </div>
-
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
                     </li>
-
                 </ul>
-
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div >
-
+            <div class="col-md-4">
+                <ul class="list-inline quicklinks">
+                    <li><a href="#">Privacy Policy</a>
+                    </li>
+                    <li><a href="#">Terms of Use</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
-
-    <!-- Services Section -->
-
-    <section id="registro">
-
-        <div class="container">
-            <div class="row">
-                <h2 class="section-heading">CONCURSO DE VÍDEOS CORTOS #TUVERANO DE CINE</h2>
-                <div class="col-sm-12" style=" box-shadow: 2px 2px 5px gray; border-radius: 5px">
+    </div>
+</footer>
 
 
-                    <p ><img src="img/video.jpg" style="float: right;width: 600px;height: 300px" class="img-responsive">¿Te vas de vacaciones y te encanta grabarlo todo? ¿Llevas tu cámara o tu móvil contigo y no los dejas ni a sol ni a sombra, registrando cada momento? ¿Tienes ideas geniales de historias que quieres convertir en películas? ¿Crees que tu verano puede ser un verano de cine? Si respondes que sí a todas estas preguntas, este es tu momento. Participa en el concurso “Tu verano de Cine” de Condislife y podrás ganar premios Condis.
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
 
-                        Sólo tienes que rodar tu vídeo de temática veraniega y colgarlo en Youtube, inscribirte en la aplicación de Facebook Cortos #TuVerano de Condis, dejar tus datos y la url de tu vídeo de Youtube y esperar a seducir con tus ideas. Podréis participar con tantos vídeos como queráis.
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
-                        Un jurado integrado por miembros del departamento de Marketing de Condis elegirá los 3 vídeos (cortos) ganadores. El concurso cuenta con 3 premios:
-                        Un jurado integrado por miembros del departamento de Marketing de Condis elegirá los 3 vídeos (cortos) ganadores. El concurso cuenta con 3 premios:
-                        Un jurado integrado por miembros del departamento de Marketing de Condis elegirá los 3 vídeos (cortos) ganadores. El concurso cuenta con 3 premios:
-                        Un jurado integrado por miembros del departamento de Marketing de Condis elegirá los 3 vídeos (cortos) ganadores. El concurso cuenta con 3 premios:
-                        Un jurado integrado por miembros del departamento de Marketing de Condis elegirá los 3 vídeos (cortos) ganadores. El concurso cuenta con 3 premios:
-<br><br>
-                        - Premio al mejor guión/historia<br>
-                        - Premio a la mejor calidad técnica<br>
-                        - Premio a la mejor interpretación<br>
-                        <label>Fecha de inicio: 18/09/2015</label><br>
-                        <label>Fecha de fin: 01/12/2015</label>
-                    </p>
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/cbpAnimatedHeader.js"></script>
 
-                </div>
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<!--<script src="js/contact_me.js"></script>-->
 
-
-            </div>
-            <br>
-            <div class="row">
-                <h2 class="section-heading">Videos</h2>
-                <div class="col-sm-6">
-                    <div  style=" box-shadow: 2px 2px 5px gray; border-radius: 5px">
-                        <div id="myElement" >
-                        </div>
-                        Juan Daniel Patiño
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div  style=" box-shadow: 2px 2px 5px gray; border-radius: 5px">
-                        <div id="myElement2" >
-                        </div>
-                        Juan Daniel Patiño
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Custom Theme JavaScript -->
+<script src="js/agency.js"></script>
+<script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+<script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+<script src="js/Angular/App.js"></script>
+<script src="js/Angular/ContestCtrl.js"></script>
+<script src="js/Angular/login.js"></script>
 
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2014</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+<script data-require="ui-bootstrap@*" data-semver="0.12.1" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
 
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <!--<script src="js/contact_me.js"></script>-->
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
-    <script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
-    <script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
-    <script src="js/Angular/App.js"></script>
-    <script src="js/Angular/ContestCtrl.js"></script>
-    <script src="js/Angular/login.js"></script>
-
-
-
-    <script src="http://content.jwplatform.com/libraries/uGTdI3ED.js"></script>
-<script type='text/javascript'>
-    var playerInstance = jwplayer('myElement');
-    playerInstance.setup({
-        file: 'img/mmcasa.mp4',
-        image: 'img/video.jpg'
-    });
-    var playerInstance2 = jwplayer('myElement2');
-    playerInstance2.setup({
-        file: 'img/mmcasa.mp4',
-        image: 'img/video.jpg'
-    });
-</script>
+<script src="http://content.jwplatform.com/libraries/uGTdI3ED.js"></script>
 
 </body>
 

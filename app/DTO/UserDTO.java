@@ -1,29 +1,29 @@
 package DTO;
 import java.util.Date;
-import org.captura.persistencia.User;
+import models.User;
 
 
 
 
 public class UserDTO implements java.io.Serializable {
 
-	private int idUser = 0;
+	private int Id = 0;
 	private String name = "";
 	private String lastName = "";
 	private String email = "";
 	private String password = "";
-	
-	
-	public int getIdUser() {
-		return this.idUser;
+
+
+	public int getId() {
+		return this.Id;
 	}
 
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
+	public void setId(int Id) {
+		this.Id = Id;
 	}
 
-	
-	
+
+
 	public String getName() {
 		return this.name;
 	}
@@ -32,8 +32,8 @@ public class UserDTO implements java.io.Serializable {
 		this.name = name;
 	}
 
-	
-	
+
+
 	public String getLastName() {
 		return this.lastName;
 	}
@@ -42,8 +42,8 @@ public class UserDTO implements java.io.Serializable {
 		this.lastName = lastName;
 	}
 
-	
-	
+
+
 	public String getEmail() {
 		return this.email;
 	}
@@ -52,8 +52,8 @@ public class UserDTO implements java.io.Serializable {
 		this.email = email;
 	}
 
-	
-	
+
+
 	public String getPassword() {
 		return this.password;
 	}
@@ -63,29 +63,29 @@ public class UserDTO implements java.io.Serializable {
 	}
 
 
-public static org.captura.persistencia.User ConvertirEntidad(
+	public static User ConvertirEntidad(
 			UserDTO dto) {
-		org.captura.persistencia.User entidad = new User();
+		User entidad = new User();
 		if (dto != null) {
-	entidad.setIdUser(dto.getIdUser());
-	entidad.setName(dto.getName());
-	entidad.setLastName(dto.getLastName());
-	entidad.setEmail(dto.getEmail());
-	entidad.setPassword(dto.getPassword());
-			
+			entidad.setId(dto.getId());
+			entidad.setName(dto.getName());
+			entidad.setLastName(dto.getLastName());
+			entidad.setEmail(dto.getEmail());
+			entidad.setPassword(dto.getPassword());
+
 		}
 		return entidad;
 	}
 
 	public static UserDTO ConvertirDTO(
-			org.captura.persistencia.User entidad) {
+			User entidad) {
 		UserDTO dto = new UserDTO();
 		if (entidad != null) {
-	dto.setIdUser(entidad.getIdUser());
-	dto.setName(entidad.getName());
-	dto.setLastName(entidad.getLastName());
-	dto.setEmail(entidad.getEmail());
-	dto.setPassword(entidad.getPassword());
+			dto.setId(entidad.getId());
+			dto.setName(entidad.getName());
+			dto.setLastName(entidad.getLastName());
+			dto.setEmail(entidad.getEmail());
+			dto.setPassword(entidad.getPassword());
 		}
 		return dto;
 	}

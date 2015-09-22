@@ -2,7 +2,7 @@
  * Created by JuanDa on 19/09/2015.
  */
 var inicioSesion='<form  onsubmit="login();"><input id="email" type="text" placeholder="Usuario" style="border-radius: 3px;border:none;width: 30%" required> '+
-'<input id="password" type="password" placeholder="Clave" style="border-radius: 3px;border:none;width: 30%" required> '+
+    '<input id="password" type="password" placeholder="Clave" style="border-radius: 3px;border:none;width: 30%" required> '+
     '<input  type="submit"  style="background-color: #FED136;color:white;border-radius: 3px;border:none" value="Entrar"><br>' +
     '<label id="errorLogin" style="color:red;display:none">Datos incorectos.</label></form>';
 

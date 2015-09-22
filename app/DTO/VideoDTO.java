@@ -1,13 +1,12 @@
 package DTO;
 import java.util.Date;
-import org.captura.persistencia.Video;
-
-
+import models.Video;
+import models.VideoState;
 
 
 public class VideoDTO implements java.io.Serializable {
 
-	private int idVideo = 0;
+	private int Id = 0;
 	private ContestDTO fk_Video_Contest = new ContestDTO();
 	private String name = "";
 	private String lastname = "";
@@ -17,19 +16,19 @@ public class VideoDTO implements java.io.Serializable {
 	private Date uploadDate = new Date();
 	private Date startDateConversion = new Date();
 	private Date finishConversion = new Date();
-	private String state = "";
+	private VideoState state = VideoState.PENDING;
 	private String email = "";
-	
-	
-	public int getIdVideo() {
-		return this.idVideo;
+
+
+	public int getId() {
+		return this.Id;
 	}
 
-	public void setIdVideo(int idVideo) {
-		this.idVideo = idVideo;
+	public void setId(int Id) {
+		this.Id = Id;
 	}
 
-	
+
 	public ContestDTO getContest() {
 		return fk_Video_Contest;
 	}
@@ -37,9 +36,9 @@ public class VideoDTO implements java.io.Serializable {
 	public void setContest(ContestDTO fk_Video_Contest) {
 		this.fk_Video_Contest = fk_Video_Contest;
 	}
-	
-	
-	
+
+
+
 	public String getName() {
 		return this.name;
 	}
@@ -48,8 +47,8 @@ public class VideoDTO implements java.io.Serializable {
 		this.name = name;
 	}
 
-	
-	
+
+
 	public String getLastname() {
 		return this.lastname;
 	}
@@ -58,8 +57,8 @@ public class VideoDTO implements java.io.Serializable {
 		this.lastname = lastname;
 	}
 
-	
-	
+
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -68,8 +67,8 @@ public class VideoDTO implements java.io.Serializable {
 		this.description = description;
 	}
 
-	
-	
+
+
 	public String getUrlVideo() {
 		return this.urlVideo;
 	}
@@ -78,8 +77,8 @@ public class VideoDTO implements java.io.Serializable {
 		this.urlVideo = urlVideo;
 	}
 
-	
-	
+
+
 	public String getUrlConvertVideo() {
 		return this.urlConvertVideo;
 	}
@@ -88,8 +87,8 @@ public class VideoDTO implements java.io.Serializable {
 		this.urlConvertVideo = urlConvertVideo;
 	}
 
-	
-	
+
+
 	public Date getUploadDate() {
 		return this.uploadDate;
 	}
@@ -98,8 +97,8 @@ public class VideoDTO implements java.io.Serializable {
 		this.uploadDate = uploadDate;
 	}
 
-	
-	
+
+
 	public Date getStartDateConversion() {
 		return this.startDateConversion;
 	}
@@ -108,8 +107,8 @@ public class VideoDTO implements java.io.Serializable {
 		this.startDateConversion = startDateConversion;
 	}
 
-	
-	
+
+
 	public Date getFinishConversion() {
 		return this.finishConversion;
 	}
@@ -118,18 +117,18 @@ public class VideoDTO implements java.io.Serializable {
 		this.finishConversion = finishConversion;
 	}
 
-	
-	
-	public String getState() {
+
+
+	public VideoState getState() {
 		return this.state;
 	}
 
-	public void setState(String state) {
+	public void setState(VideoState state) {
 		this.state = state;
 	}
 
-	
-	
+
+
 	public String getEmail() {
 		return this.email;
 	}
@@ -139,43 +138,43 @@ public class VideoDTO implements java.io.Serializable {
 	}
 
 
-public static org.captura.persistencia.Video ConvertirEntidad(
+	public static Video ConvertirEntidad(
 			VideoDTO dto) {
-		org.captura.persistencia.Video entidad = new Video();
+		Video entidad = new Video();
 		if (dto != null) {
-	entidad.setIdVideo(dto.getIdVideo());
-	entidad.setContest(ContestDTO.ConvertirEntidad(dto.getContest()));
-	entidad.setName(dto.getName());
-	entidad.setLastname(dto.getLastname());
-	entidad.setDescription(dto.getDescription());
-	entidad.setUrlVideo(dto.getUrlVideo());
-	entidad.setUrlConvertVideo(dto.getUrlConvertVideo());
-	entidad.setUploadDate(dto.getUploadDate());
-	entidad.setStartDateConversion(dto.getStartDateConversion());
-	entidad.setFinishConversion(dto.getFinishConversion());
-	entidad.setState(dto.getState());
-	entidad.setEmail(dto.getEmail());
-			
+			entidad.setId(dto.getId());
+			entidad.setContest(ContestDTO.ConvertirEntidad(dto.getContest()));
+			entidad.setName(dto.getName());
+			entidad.setLastname(dto.getLastname());
+			entidad.setDescription(dto.getDescription());
+			entidad.setUrlVideo(dto.getUrlVideo());
+			entidad.setUrlConvertVideo(dto.getUrlConvertVideo());
+			entidad.setUploadDate(dto.getUploadDate());
+			entidad.setStartDateConversion(dto.getStartDateConversion());
+			entidad.setFinishConversion(dto.getFinishConversion());
+			entidad.setState(dto.getState());
+			entidad.setEmail(dto.getEmail());
+
 		}
 		return entidad;
 	}
 
 	public static VideoDTO ConvertirDTO(
-			org.captura.persistencia.Video entidad) {
+			Video entidad) {
 		VideoDTO dto = new VideoDTO();
 		if (entidad != null) {
-	dto.setIdVideo(entidad.getIdVideo());
-	dto.setContest(ContestDTO.ConvertirDTO(entidad.getContest()));
-	dto.setName(entidad.getName());
-	dto.setLastname(entidad.getLastname());
-	dto.setDescription(entidad.getDescription());
-	dto.setUrlVideo(entidad.getUrlVideo());
-	dto.setUrlConvertVideo(entidad.getUrlConvertVideo());
-	dto.setUploadDate(entidad.getUploadDate());
-	dto.setStartDateConversion(entidad.getStartDateConversion());
-	dto.setFinishConversion(entidad.getFinishConversion());
-	dto.setState(entidad.getState());
-	dto.setEmail(entidad.getEmail());
+			dto.setId(entidad.getId());
+			dto.setContest(ContestDTO.ConvertirDTO(entidad.getContest()));
+			dto.setName(entidad.getName());
+			dto.setLastname(entidad.getLastname());
+			dto.setDescription(entidad.getDescription());
+			dto.setUrlVideo(entidad.getUrlVideo());
+			dto.setUrlConvertVideo(entidad.getUrlConvertVideo());
+			dto.setUploadDate(entidad.getUploadDate());
+			dto.setStartDateConversion(entidad.getStartDateConversion());
+			dto.setFinishConversion(entidad.getFinishConversion());
+			dto.setState(entidad.getState());
+			dto.setEmail(entidad.getEmail());
 		}
 		return dto;
 	}

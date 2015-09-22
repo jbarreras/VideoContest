@@ -38,21 +38,21 @@
         }
 
 
-       $scope.registrar= function(){
-           if($("#clave").val()==$("#clave2").val()){
-               var user=new Object();
-               user.name=$("#nombres").val();
-               user.lastName=$("#apellidos").val();
-               user.email=$("#correo").val();
-               user.password=$("#clave").val();
-               $scope.Persist(user);
-           }else{
-               $("#error").text("Las claves deben ser iguales.")
-           }
+        $scope.registrar= function(){
+            if($("#clave").val()==$("#clave2").val()){
+                var user=new Object();
+                user.name=$("#nombres").val();
+                user.lastName=$("#apellidos").val();
+                user.email=$("#correo").val();
+                user.password=$("#clave").val();
+                $scope.Persist(user);
+            }else{
+                $("#error").text("Las claves deben ser iguales.")
+            }
 
 
-           return false;
-       }
+            return false;
+        }
 
         $scope.Persist = function(data) {
             var editKey = "$edit";
@@ -89,4 +89,4 @@
     module.controller("UserCtrl", ctrl);
 
 
-    }());
+}());

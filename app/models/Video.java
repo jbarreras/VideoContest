@@ -18,7 +18,6 @@ public class Video extends utilities.repository.Entity implements java.io.Serial
     private Date finishConversion = new Date();
     private VideoState state = VideoState.PENDING;
     private String email = "";
-    private User user = new User();
     private Contest contest = new Contest();
 
     @Column(name = "name", length = 100)
@@ -112,15 +111,7 @@ public class Video extends utilities.repository.Entity implements java.io.Serial
         this.email = email;
     }
 
-    @ManyToOne()
-    @JoinColumn(name = "user")
-    public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     @ManyToOne()
     @JoinColumn(name = "contest")
