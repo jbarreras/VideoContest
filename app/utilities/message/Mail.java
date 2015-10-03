@@ -6,6 +6,7 @@ import play.Play;
 import javax.mail.Message;
 import javax.mail.Session;
 import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
@@ -21,6 +22,7 @@ public class Mail {
 
             MimeMessage mail = new MimeMessage(getMailSession);
             mail.addRecipients(Message.RecipientType.TO, to);
+            mail.setFrom(new InternetAddress(Play.application().configuration().getString("videoconverter.mailUser")));
             mail.setSubject(subject);
             mail.setContent(message, "text/html");
 

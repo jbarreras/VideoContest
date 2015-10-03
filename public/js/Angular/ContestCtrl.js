@@ -107,10 +107,6 @@ var app = angular.module("VideoContest", ['ui.bootstrap'])
             $http.get($scope.service+"/video/"+window.localStorage.getItem("idConcurso")).success(function(response) {
                 $scope.allVideos=response;
                 $scope.filteredTodos =$scope.allVideos.slice(0, 10);
-
-
-
-
             });
         };
 
@@ -128,6 +124,7 @@ var app = angular.module("VideoContest", ['ui.bootstrap'])
                 var ruta=$scope.filteredTodos[i].urlVideo;
                 if ($scope.filteredTodos[i].state=="COMPLETED"){
                     ruta=$scope.filteredTodos[i].urlConvertVideo;
+                    ruta="http://localhost:9000/assets/"+ruta.substring(ruta.indexOf("uploaded")).replace('\\','/');
                 }
                 jwplayer($scope.filteredTodos[i].id.toString()).remove();
                 var playerInstance = jwplayer($scope.filteredTodos[i].id.toString());
@@ -278,7 +275,7 @@ var app = angular.module("VideoContest", ['ui.bootstrap'])
             video.urlVideo=urlVideo;
             video.uploadDate=$scope.getFechaActual();
             var contest=new Object();
-            contest.id=4;
+            contest.id=window.localStorage.getItem("idConcursoUsuario");
             video.contest=contest;
             video.state="PENDING";
 
